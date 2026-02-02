@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Valentine Surprise 💖</title>
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #ffe6f0;
+        font-family: Arial, sans-serif;
+        text-align: center;
+        overflow: hidden;
+    }
+    .box {
+        background-color: #fff;
+        padding: 40px;
+        border-radius: 15px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+    button {
+        margin: 10px;
+        padding: 12px 25px;
+        border: none;
+        font-size: 16px;
+        border-radius: 8px;
+        cursor: pointer;
+        color: #fff;
+    }
+    #yes { background-color: #ff4d6d; }
+    #no { background-color: #888; position: relative; }
+</style>
+</head>
+<body>
+<div class="box">
+    <h1>Will you be my Valentine? 💖</h1>
+    <button id="yes" onclick="showMessage()">Yes</button>
+    <button id="no">No</button>
+    <p id="message" style="margin-top:20px; font-size:18px; color:#ff4d6d;"></p>
+</div>
+
+<script>
+const noBtn = document.getElementById('no');
+
+// Move the 'No' button randomly when mouse hovers
+noBtn.addEventListener('mouseover', function() {
+    const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
+    const y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
+    noBtn.style.position = 'absolute';
+    noBtn.style.left = x + 'px';
+    noBtn.style.top = y + 'px';
+});
+
+function showMessage() {
+    document.getElementById('message').innerText = "Yay! 💖 You said YES! Happy Valentine’s Day! 🌹";
+    document.getElementById('yes').disabled = true;
+    document.getElementById('no').disabled = true;
+}
+</script>
+</body>
+</html>
